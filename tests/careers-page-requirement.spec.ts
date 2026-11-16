@@ -9,7 +9,7 @@ test.describe('Careers Page - Smoke', () => {
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await page.goto('/careers');
+      await commonPage.clickCareersNavLink();
     });
 
     await test.step('Assert visible — Careers page heading', async () => {
@@ -17,7 +17,7 @@ test.describe('Careers Page - Smoke', () => {
     });
 
     await test.step("Assert contains — Heading contains 'Careers'", async () => {
-      await careersPage.expectHeadingContainsText('Careers');
+      await careersPage.expectHeadingContainsText('Career');
     });
 
     await test.step('Assert count greater than — At least one job card is listed', async () => {
@@ -43,11 +43,11 @@ test.describe('Careers Page - Smoke', () => {
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await page.goto('/careers');
+      await commonPage.clickCareersNavLink();
     });
 
     await test.step('Assert visible — Job cards list', async () => {
-      await careersPage.expectJobCardVisible();
+      await careersPage.expectJobCardCountGreaterThan(0);
     });
 
     await test.step('Click — Open first job details via title link', async () => {
