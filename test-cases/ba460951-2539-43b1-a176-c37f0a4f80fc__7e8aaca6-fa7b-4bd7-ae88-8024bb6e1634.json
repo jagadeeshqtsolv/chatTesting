@@ -1,0 +1,150 @@
+{
+  "id": "7e8aaca6-fa7b-4bd7-ae88-8024bb6e1634",
+  "testPlanId": "ba460951-2539-43b1-a176-c37f0a4f80fc",
+  "requirementId": "01f81ea3-6900-4939-8d57-e9e406f65aca",
+  "suiteName": "Careers Page - Smoke",
+  "case": {
+    "id": "7e8aaca6-fa7b-4bd7-ae88-8024bb6e1634",
+    "title": "Open a job detail and apply successfully via application form",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Open home page",
+        "value": "https://example.com"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Main navigation: Careers link",
+        "locatorHint": "a[href='/careers']"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "Job cards list",
+        "locatorHint": "[data-testid='job-card']",
+        "value": "5000"
+      },
+      {
+        "id": "s4",
+        "action": "tap",
+        "targetDescription": "Open first job details via title link",
+        "locatorHint": "[data-testid='job-card']:first-child [data-testid='job-title']"
+      },
+      {
+        "id": "s5",
+        "action": "waitForVisible",
+        "targetDescription": "Apply button on job details page",
+        "locatorHint": "[data-testid='job-apply-button']",
+        "value": "5000"
+      },
+      {
+        "id": "s6",
+        "action": "assertVisible",
+        "targetDescription": "Apply button is visible",
+        "locatorHint": "[data-testid='job-apply-button']"
+      },
+      {
+        "id": "s7",
+        "action": "tap",
+        "targetDescription": "Click Apply to open application form",
+        "locatorHint": "[data-testid='job-apply-button']"
+      },
+      {
+        "id": "s8",
+        "action": "waitForVisible",
+        "targetDescription": "Application form container",
+        "locatorHint": "[data-testid='application-form']",
+        "value": "5000"
+      },
+      {
+        "id": "s9",
+        "action": "assertVisible",
+        "targetDescription": "Name field visible",
+        "locatorHint": "#applicant-name"
+      },
+      {
+        "id": "s10",
+        "action": "assertVisible",
+        "targetDescription": "Email field visible",
+        "locatorHint": "#applicant-email"
+      },
+      {
+        "id": "s11",
+        "action": "assertVisible",
+        "targetDescription": "Phone field visible",
+        "locatorHint": "#applicant-phone"
+      },
+      {
+        "id": "s12",
+        "action": "assertVisible",
+        "targetDescription": "Resume upload field visible",
+        "locatorHint": "#applicant-resume"
+      },
+      {
+        "id": "s13",
+        "action": "assertVisible",
+        "targetDescription": "Submit button visible",
+        "locatorHint": "#applicant-submit"
+      },
+      {
+        "id": "s14",
+        "action": "fill",
+        "targetDescription": "Enter applicant name",
+        "locatorHint": "#applicant-name",
+        "value": "Jane Doe"
+      },
+      {
+        "id": "s15",
+        "action": "fill",
+        "targetDescription": "Enter applicant email",
+        "locatorHint": "#applicant-email",
+        "value": "jane.doe@example.com"
+      },
+      {
+        "id": "s16",
+        "action": "fill",
+        "targetDescription": "Enter applicant phone",
+        "locatorHint": "#applicant-phone",
+        "value": "123-456-7890"
+      },
+      {
+        "id": "s17",
+        "action": "fill",
+        "targetDescription": "Attach resume file",
+        "locatorHint": "#applicant-resume",
+        "value": "fixtures/resume.pdf"
+      },
+      {
+        "id": "s18",
+        "action": "tap",
+        "targetDescription": "Submit application",
+        "locatorHint": "#applicant-submit"
+      },
+      {
+        "id": "s19",
+        "action": "waitForVisible",
+        "targetDescription": "Submission confirmation message",
+        "locatorHint": "[data-testid='application-confirmation']",
+        "value": "5000"
+      },
+      {
+        "id": "s20",
+        "action": "assertContainsText",
+        "targetDescription": "Confirmation message acknowledges submission",
+        "locatorHint": "[data-testid='application-confirmation']",
+        "assertion": "Thank you"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

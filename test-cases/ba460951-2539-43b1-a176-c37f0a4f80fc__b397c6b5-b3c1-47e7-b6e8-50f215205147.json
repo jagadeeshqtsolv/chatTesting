@@ -1,0 +1,71 @@
+{
+  "id": "b397c6b5-b3c1-47e7-b6e8-50f215205147",
+  "testPlanId": "ba460951-2539-43b1-a176-c37f0a4f80fc",
+  "requirementId": "01f81ea3-6900-4939-8d57-e9e406f65aca",
+  "suiteName": "Careers Page - Smoke",
+  "case": {
+    "id": "b397c6b5-b3c1-47e7-b6e8-50f215205147",
+    "title": "Navigate to Careers via main nav and verify job list with required fields",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Open home page",
+        "value": "https://example.com"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Main navigation: Careers link",
+        "locatorHint": "a[href='/careers']"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "Careers page heading",
+        "locatorHint": "h1",
+        "value": "5000"
+      },
+      {
+        "id": "s4",
+        "action": "assertContainsText",
+        "targetDescription": "Heading contains 'Careers'",
+        "locatorHint": "h1",
+        "assertion": "Careers"
+      },
+      {
+        "id": "s5",
+        "action": "assertCountGreaterThan",
+        "targetDescription": "At least one job card is listed",
+        "locatorHint": "[data-testid='job-card']"
+      },
+      {
+        "id": "s6",
+        "action": "assertVisible",
+        "targetDescription": "First job has a clickable title",
+        "locatorHint": "[data-testid='job-card']:first-child [data-testid='job-title']"
+      },
+      {
+        "id": "s7",
+        "action": "assertVisible",
+        "targetDescription": "First job shows location",
+        "locatorHint": "[data-testid='job-card']:first-child [data-testid='job-location']"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "First job shows brief description",
+        "locatorHint": "[data-testid='job-card']:first-child [data-testid='job-description']"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

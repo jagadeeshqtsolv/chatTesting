@@ -1,0 +1,6 @@
+{
+  "id": "01f81ea3-6900-4939-8d57-e9e406f65aca",
+  "title": "Careers Page Requirement",
+  "content": "The Careers page should be accessible from the main navigation menu. It must display a list of current job openings, each with a job title, location, and a brief description. Users should be able to click on a job title to view more details about the position. There should be an option to apply for a job, which opens an application form. The application form must include fields for name, email, phone number, resume upload, and a submit button. Upon successful submission, a confirmation message should be displayed to the user.",
+  "createdAt": "2026-11-16T19:40:45.445Z"
+}

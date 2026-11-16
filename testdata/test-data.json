@@ -1,0 +1,8 @@
+{
+  "openAJobDetailAndApplySuccessfullyViaApplicationForm": {
+    "enterApplicantName": "Jane Doe",
+    "enterApplicantEmail": "jane.doe@example.com",
+    "enterApplicantPhone": "123-456-7890",
+    "attachResumeFile": "fixtures/resume.pdf"
+  }
+}
