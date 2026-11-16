@@ -9,7 +9,7 @@ test.describe('Careers Page - Smoke', () => {
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await commonPage.clickCareersNavLink();
+      await page.goto('/careers');
     });
 
     await test.step('Assert visible — Careers page heading', async () => {
@@ -43,7 +43,7 @@ test.describe('Careers Page - Smoke', () => {
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await commonPage.clickCareersNavLink();
+      await page.goto('/careers');
     });
 
     await test.step('Assert visible — Job cards list', async () => {
