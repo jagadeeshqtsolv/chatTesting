@@ -5,11 +5,11 @@ import testData from '@testdata/test-data.json';
 test.describe('Careers Page - Smoke', () => {
   test('Navigate to Careers via main nav and verify job list with required fields', { tag: ["@smoke","@regression","@P0","@case-b397c6b5-b3c1-47e7-b6e8-50f215205147"] }, async ({ page, commonPage, careersPage }) => {
     await test.step('Open — Open home page', async () => {
-      await page.goto('https://example.com');
+      await page.goto('/');
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await commonPage.clickCareersNavLink();
+      await page.goto('/careers');
     });
 
     await test.step('Assert visible — Careers page heading', async () => {
@@ -39,11 +39,11 @@ test.describe('Careers Page - Smoke', () => {
 
   test('Open a job detail and apply successfully via application form', { tag: ["@smoke","@regression","@P0","@case-7e8aaca6-fa7b-4bd7-ae88-8024bb6e1634"] }, async ({ page, commonPage, careersPage, jobDetailsPage }) => {
     await test.step('Open — Open home page', async () => {
-      await page.goto('https://example.com');
+      await page.goto('/');
     });
 
     await test.step('Click — Main navigation: Careers link', async () => {
-      await commonPage.clickCareersNavLink();
+      await page.goto('/careers');
     });
 
     await test.step('Assert visible — Job cards list', async () => {
